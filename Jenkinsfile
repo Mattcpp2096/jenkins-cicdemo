@@ -13,7 +13,7 @@ pipeline {
   }
   post  {
     always  {
-      script  { env.RESULT = currentBUILD.currentResult }
+      script  { env.RESULT = currentBuild.currentResult }
       sh '''
         curl -s -X POST https://webexapis.com/v1/messages \\
           -H "Authorization: Bearer $WEBEX_TOKEN" \\
